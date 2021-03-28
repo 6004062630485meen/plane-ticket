@@ -1,0 +1,11 @@
+<?php
+  $text = $_POST[text];
+  if (isset($text)) {
+    $date = date("Y-m-d H:i");
+    $sql = "";
+    for ($i = 1; $i <= count($text); $i++) {
+      if ($text[$i] != "") $sql .= "INSERT INTO chatlog (date, text) VALUES ('$date', '$text[$i]'); ";
+    };
+    echo $sql; //ผลลัพท์ sql เอาไป query
+  }
+?>
